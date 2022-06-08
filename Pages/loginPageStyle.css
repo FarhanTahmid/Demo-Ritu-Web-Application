@@ -13,11 +13,9 @@ body{
   background: rgba(26,188,156,0.3);
 }
 .container{
-  max-width: 600px;
-  padding: 0 0px;
-  margin-top: 220px;
-  margin-bottom: 200px;
-  margin-left: 1050px;
+  max-width: 440px;
+  padding: 0 20px;
+  margin: 200px auto ;
 }
 .wrapper{
   width: 100%;
