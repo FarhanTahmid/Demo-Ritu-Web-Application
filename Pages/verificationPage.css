@@ -21,18 +21,18 @@ body{
     border-radius: 5px;
 }
 .verificationSentText{
-    margin-left: 67px;
+    margin-left: 57px;
     font-size: 21px;
     font-weight: 500;
 }
 .wantCode{
-    margin-left: 100px;
+    margin-left: 96px;
     font-size: 17px;
 }
 .getVerificationCode{
     text-align: center;
     margin-top: 10px;
-    margin-left: 185px;
+    margin-left: 175px;
     height: 45px;
     width: 50%;
     outline: none;
@@ -49,6 +49,7 @@ body{
 .button{
     height: 45px;
     margin: 15px 0;
+    margin-bottom: 5px;
 }
 .button input{
     height: 100%;
@@ -56,8 +57,9 @@ body{
     outline:none;
     color: #fff;
     border: none;
+    
     font-size: 30px;
-    font-weight: 500px;
+    font-weight: 700px;
     border-radius: 5px;
     letter-spacing: 3px;
     background:#5CDB95;
