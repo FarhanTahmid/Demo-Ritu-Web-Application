@@ -3,7 +3,8 @@
   <head>
     <meta charset="utf-8">
     <title>RITU</title>
-    <link rel="stylesheet" href="homepage.css">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'homepage.css' %}">
   </head>
   <body>
     <div class="banner">
@@ -23,11 +24,9 @@
       <p> Not only will you be given the chance to earn a whopping 500000tk but also you will be have an contribute the enviroment of our country. <br>Do you think, you have what it takes?</p>
       <div>
         <a href="{% url 'login' %}">
-          <button type="button"><span></span>Login</button>  
-        </a>
-        <a href="./your-url">
-          <button type="button"><span></span>SIGN UP</button>  
-        </a>
+          <button type="button"><span></span>Login</button></a>
+        <a href="{% url 'signUp' %}">
+          <button type="button"><span></span>SIGN UP</button></a>
       </div>
     </div>
 
