@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+    font-family: 'Poppins',sans-serif;
+}
+body{
+    background:linear-gradient(1000deg, #5CDB95,#379683); 
+}
+body .introSentence{
+    max-width: 600px;
+    width: 100%;
+    margin-top: 30px;
+    margin-left: 40px;
+    
+}
+body .introSentence p{
+    font-size: 180%;
+}
+
+body .rituLogo{
+    height: 600px;
+    width: 600px;
+}
+body .aboutUs{
+    margin-left: 1000px;
+    margin-bottom: 500px;
+}
