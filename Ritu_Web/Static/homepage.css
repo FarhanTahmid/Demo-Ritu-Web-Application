@@ -1,3 +1,6 @@
+/* <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet"> */
 *{
   margin: 0;
   padding: 0;
@@ -110,3 +113,19 @@ button:hover span{
 button:hover{
   border: none;
 }
+
+/* footer section styling
+footer {
+  background: #111;
+  /font-family: 'Poppins', sans-serif; 
+  padding: 15px 23px;
+  color: #fff;
+  text-align: center;
+}
+footer span a {
+  color: crimson;
+  text-decoration: none;
+}
+footer span a:hover {
+  text-decoration: underline;
+} */
