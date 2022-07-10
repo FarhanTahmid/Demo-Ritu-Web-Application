@@ -4,10 +4,6 @@ def homepage(request):
     """The home page for ritu"""
     return render(request, 'ritu_web_app/homepage.html')
 
-def loginPage(request):
-    return render(request,'ritu_web_app/loginPage.html')
-def signupPage(request):
-    return render(request,'ritu_web_app/signUpForm.html')
 def aboutUs(request):
     return render(request,'ritu_web_app/aboutUs.html')
 def contactUs(request):

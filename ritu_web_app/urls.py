@@ -8,8 +8,6 @@ app_name= 'ritu_web_app'
 urlpatterns=[
     # Home page
     path('', views.homepage, name='homepage'),
-    path('login',views.loginPage,name='loginPage'),
-    path('signUp',views.signupPage,name='signUpPage'),
     path('aboutUs',views.aboutUs,name='aboutUs'),
     path('contactUs',views.contactUs,name='contactUs'),
     path('finalMessage',views.finalMessage,name='finalMessage'),

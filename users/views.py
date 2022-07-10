@@ -12,16 +12,32 @@ def signupPage(request):
         if password==confirmPassword:
             if User.objects.filter(email=email).exists():
                 messages.info(request,'Email already used')
-                return redirect('signUp')
+                return redirect('signup')
             elif User.objects.filter(username=username).exists():
                 messages.info(request,'Username already exists')
-                return redirect('signUp')
+                return redirect('signup')
             else:
                 user = User.objects.create_user(username=username, email=email, password=password)
                 user.save();
-                return redirect('loginPage')
+                return redirect('login')
         else:
             messages.info(request, 'Two passwords did not match')
-            return redirect('signUp')
+            return redirect('signup')
     else:
          return render(request, 'registration/signUpForm.html')
+
+def login(request):
+    if request.method=='POST':
+        username=request.POST['username']
+        password=request.POST['password']
+        user=auth.authenticate(username=username,password=password)
+        if user is not None:
+            auth.login(request,user)
+            return redirect('menu')
+        else:
+            messages.info(request,'Credentials given are wrong')
+            return redirect('login')
+    else:
+        return render(request,'registration/loginPage.html')
+def menu(request):
+    return render(request,'registration/menu.html')
