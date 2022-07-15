@@ -14,8 +14,6 @@ def leaderboard(request):
     return render(request, 'ritu_web_app/Leaderboard.html')
 def marketplace(request):
     return render(request, 'ritu_web_app/Marketplace.html')
-def menu(request):
-    return render(request, 'ritu_web_app/menu.html')
 def task1(request):
     return render(request, 'ritu_web_app/task1.html')
 def task2(request):

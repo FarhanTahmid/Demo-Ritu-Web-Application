@@ -13,7 +13,7 @@ urlpatterns=[
     path('finalMessage',views.finalMessage,name='finalMessage'),
     path('leaderboard',views.leaderboard,name='leaderboard'),
     path('marketplace',views.marketplace,name='marketplace'),
-    path('menu',views.menu,name='menu'),
+    
     path('task1',views.task1,name='task1'),
     path('task2',views.task2,name='task2'),
     path('task3',views.task3,name='task3'),
