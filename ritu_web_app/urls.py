@@ -19,4 +19,5 @@ urlpatterns=[
     path('task3',views.task3,name='task3'),
     path('verification',views.verification,name='verificationPage'),
     path('profile',views.profileCard,name='profileCard'),
+    path('FinalMessege',views.FinalMessege,name='FinalMessege'),
 ]

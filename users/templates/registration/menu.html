@@ -4,16 +4,16 @@
   <head>
     <meta charset="utf-8">
     <title>RITU</title>
-    <link rel="stylesheet" href="menu.css">
+    <link rel="stylesheet" href="{% static 'menu.css' %}">
   </head>
   <body>
     <div class="banner">
       <div class="navbar">
-        <img src="{% static 'ritu.png' %}" class="ritu">
+        <img src="{% static 'ritu (2).png' %}" class="ritu">
         <ul>
-          <li><a href="#">Leaderboard</a></li>
-          <li><a href="#">Profile</a></li>
-          <li><a href="#">Market Place</a></li>
+          <li><a href="{% url 'ritu_web_app:leaderboard' %}">Leaderboard</a></li>
+          <li><a href="{% url 'ritu_web_app:profileCard' %}">Profile</a></li>
+          <li><a href="{% url 'ritu_web_app:marketplace' %}">Marketplace</a></li>
         </ul>
 
       </div>
@@ -22,7 +22,8 @@
 
     <div class="content">
       <div>
-        <button type="button"><span></span>Play</button>
+        <a href="{% url 'ritu_web_app:task1' %}">
+        <button type="button"><span></span>Play</button></a>
       </div>
     </div>
 

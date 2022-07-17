@@ -6,7 +6,7 @@
     <title>Leaderboard</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital@0;1&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="stylesheet" href="{% static 'leaderboard.css' %}">
     <script src="https://kit.fontawesome.com/2c5d01c5ac.js" crossorigin="anonymous"></script>
   </head>
 
@@ -20,7 +20,7 @@
 
       <div  class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item"><a class="nav-link" href="{% url 'ritu_web_app:homepage' %}">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="{% url 'users:menu' %}">Home</a></li>
           <li class="nav-item"><a class="nav-link" href="{% url 'ritu_web_app:profileCard' %}">Profile</a></li>
           <li class="nav-item"> <a class="nav-link" href="{% url 'ritu_web_app:leaderboard' %}">Leaderboard</a></li>
           <li class="nav-item"><a class="nav-link" href="{% url 'ritu_web_app:marketplace' %}">Marketplace</a></li>
@@ -35,8 +35,29 @@
           <div class="row text-center">
             <div class="col">
               <h1 class="display-4">Leaderboard</h1>
-              <p class="text-muted">You have to replace filament bulb with energy saving bulb and upload video.</p>
-              <button type="button" class="btn btn-warning px-3">Upload</button>
+              <style>
+                table, th, td {
+                  border:1px solid black;
+                }
+                </style>
+              <table style="width:100%">
+                <tr>
+                  <th>Player ID</th>
+                  <th>Name</th>
+                  <th>Points</th>
+                </tr>
+                <tr>
+                  <td>emp_zik21</td>
+                  <td>Zaed Khan</td>
+                  <td>Bangladesh</td>
+                </tr>
+                <tr>
+                  <td>baby_doll</td>
+                  <td>Sunnie Lion</td>
+                  <td>Canada</td>
+                </tr>
+              </table>
+
             </div>
           </div>
         </div>

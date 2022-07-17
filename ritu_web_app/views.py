@@ -24,3 +24,5 @@ def verification(request):
     return render(request,'ritu_web_app/verificationPage.html')
 def profileCard(request):
     return render(request,'ritu_web_app/profileCard.html')
+def FinalMessege(request):
+    return render(request,'ritu_web_app/FinalMessege.html')
