@@ -2,13 +2,18 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.models import User,auth
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib import messages
+from ritu_web_app import addPlayers
 
 def signupPage(request):
     if request.method=='POST':
+        fullname=request.POST['fullname']
         username=request.POST['username']
         email=request.POST['email']
-        password=request.POST['password']
-        confirmPassword=request.POST['confirmPassword']
+        mobileNumber=request.POST['mobileNumber']
+        address=request.POST['address']
+        password=request.POST.get('password')
+        confirmPassword=request.POST.get('confirmPassword')
+
         if password==confirmPassword:
             if User.objects.filter(email=email).exists():
                 messages.info(request,'Email already used')
@@ -19,6 +24,11 @@ def signupPage(request):
             else:
                 user = User.objects.create_user(username=username, email=email, password=password)
                 user.save();
+
+                #sending data to the Players table to register the user through addPlayers class
+                playerRegistration=addPlayers.PlayerAdd(username, fullname, mobileNumber, email, address)
+                playerRegistration.addPlayer()
+
                 return redirect('users:login')
         else:
             messages.info(request, 'Two passwords did not match')
