@@ -17,6 +17,20 @@ def marketplace(request):
 def task1(request):
     return render(request, 'ritu_web_app/task1.html')
 def task2(request):
+    # if request.method=="POST":
+    #     studentId=request.POST['studentId']
+    #     #add file database variable here after handling media query
+    #     description=request.POST['description']
+    #     links=request.POST['links']
+        
+    #     anonimity='True' #change this after html gets corrected as it shows unwanted stuff while selecting the option
+        
+    #     addingComplaint=addComplainsToDatabase.RegisterComplains(studentId,description,links,anonimity)
+    #     addingComplaint.registerComplains()
+        
+    #Complete this
+        
+    # return render(request,"complaint.html")
     return render(request, 'ritu_web_app/task2.html')
 def task3(request):
     return render(request, 'ritu_web_app/task3.html')
