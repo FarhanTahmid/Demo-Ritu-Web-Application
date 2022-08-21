@@ -6,7 +6,7 @@
     <title>Task 2</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital@0;1&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-    <link rel="stylesheet" href="{% static 'task1.css' %}">
+    <link rel="stylesheet" href="{% static 'task2.css' %}">
     <script src="https://kit.fontawesome.com/2c5d01c5ac.js" crossorigin="anonymous"></script>
   </head>
 
@@ -38,11 +38,34 @@
               <h1 class="display-4" style="color:rgb(234, 245, 245)">Task 2</h1>
               <p  style="color: aliceblue">Roads are the homes of many living creatrues!<br> Clean the road and
               upload video!.</p>
-          <label for="">Enter Post Link: </label>
+          <!-- <label for="">Enter Post Link: </label>
           <input type="url"> <br>
           <label for="myfile">Select a file:</label>
           <input type="file" id="myfile" name="myfile"><br><br>
-              <a href="{% url 'ritu_web_app:task3' %}"><button type="button" class="btn btn-warning px-3">Upload</button></a>
+              <a href="{% url 'ritu_web_app:task3' %}"><button type="button" class="btn btn-warning px-3">Upload</button></a> -->
+              <form method="POST" action="task3">
+                {% csrf_token %}
+                <div class="user-details">
+          
+          
+                  <div class="file_upload_container">
+                    <span class="details">Photo/Video Proof: </span>
+                    <input type="file" name="file" class="upload-box"/>
+                  </div>
+          
+              
+          
+                  <div class="input-box">
+                    <span class="details">Enter Post Link: </span>
+                    <input type="text" placeholder="Enter Links" required name="links">
+                  </div>
+          
+                </div>
+                
+                <div class="button">
+                  <input type="submit" value="Report">
+                </div>
+              </form>
             </div>
           </div>
         </div>
