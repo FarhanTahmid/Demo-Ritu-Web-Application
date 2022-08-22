@@ -46,7 +46,7 @@ class Task3Proof(models.Model):
 class Task1Text(models.Model):
     player=models.ForeignKey(Players,null=False,blank=False,on_delete=models.CASCADE)
     text=models.URLField(max_length=200,null=False,blank=False,verbose_name="text")
-    time_added = models.DateTimeField(auto_now_add=True)
+    # time_added = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return f"{self.text[:50]}..."

@@ -41,11 +41,7 @@
               Start your journey at RITU by planting a tree. It can be in a pot plant or in a field or garden<br>
             All you have to do, is record yourself planting it and upload it here. Whoever completes first gets more points!<br>
           You can access our marketplace to order a plant if you cannot go buy one yourself.</p>
-          <!-- <label for="">Enter Post Link: </label>
-          <input type="url"> <br>
-          <label for="myfile">Select a file:</label>
-          <input type="file" id="myfile" name="myfile"><br><br>
-              <a href="{% url 'ritu_web_app:task2' %}"><button type="button" class="btn btn-warning px-3">Upload</button></a> -->
+          
               <form method="POST" action="task2">
                 {% csrf_token %}
                 <div class="user-details">
@@ -60,7 +56,7 @@
           
                   <div class="input-box">
                     <span class="details">Enter Post Link: </span>
-                    <input type="text" placeholder="Enter Links" required name="links">
+                    <input type="text" placeholder="Enter Links" required name="task_1_url">
                   </div>
           
                 </div>
@@ -75,29 +71,7 @@
       </div>
     </header>
 
-    <!-- <form method="POST" action="complaint">
-      {% csrf_token %}
-      <div class="user-details">
-
-
-        <div class="file_upload_container">
-          <span class="details">Photo/Video Proof: </span>
-          <input type="file" name="file" class="upload-box"/>
-        </div>
-
-    
-
-        <div class="input-box">
-          <span class="details">Enter Post Link: </span>
-          <input type="text" placeholder="Enter Links" required name="links">
-        </div>
-
-      </div>
-      
-      <div class="button">
-        <input type="submit" value="Report">
-      </div>
-    </form> -->
+   
 
     <!-- footer section start -->
       <footer>
