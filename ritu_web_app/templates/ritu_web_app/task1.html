@@ -26,7 +26,7 @@
           <li class="nav-item"><a class="nav-link" href="{% url 'ritu_web_app:profileCard' %}">Profile</a></li>
           <li class="nav-item"> <a class="nav-link" href="{% url 'ritu_web_app:leaderboard' %}">Leaderboard</a></li>
           <li class="nav-item"><a class="nav-link" href="{% url 'ritu_web_app:marketplace' %}">Marketplace</a></li>
-          <li class="nav-item"><a class="nav-link" href="{% url 'users:logout' %}">Log Out</a></li>
+          <li class="nav-item"><a class="nav-link" href="{% url 'ritu_web_app:homepage' %}">Log Out</a></li>
         </ul>
       </div>
     </nav>
@@ -42,7 +42,7 @@
             All you have to do, is record yourself planting it and upload it here. Whoever completes first gets more points!<br>
           You can access our marketplace to order a plant if you cannot go buy one yourself.</p>
           
-              <form method="POST" action="task2">
+              <form method="POST" action="task1">
                 {% csrf_token %}
                 <div class="user-details">
           

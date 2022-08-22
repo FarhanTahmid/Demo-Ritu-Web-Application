@@ -44,7 +44,7 @@ class Task3Proof(models.Model):
 
 #Proof of task 1 submission : URL of facebook post
 class Task1Text(models.Model):
-    player=models.ForeignKey(Players,null=False,blank=False,on_delete=models.CASCADE)
+    player=models.ForeignKey(Players,null=False,blank=False,on_delete=models.CASCADE,db_constraint=False)
     text=models.URLField(max_length=200,null=False,blank=False,verbose_name="text")
     # time_added = models.DateTimeField(auto_now_add=True)
 
@@ -53,21 +53,22 @@ class Task1Text(models.Model):
 
 #Proof of task 2 submission : URL of facebook post
 class Task2Text(models.Model):
-    player=models.ForeignKey(Players,null=False,blank=False,on_delete=models.CASCADE)
+    player=models.ForeignKey(Players,null=False,blank=False,on_delete=models.CASCADE,db_constraint=False)
     text=models.URLField(max_length=200,null=False,blank=False,verbose_name="text")
-    time_added = models.DateTimeField(auto_now_add=True)
+    # time_added = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return f"{self.text[:50]}..."
 
 #Proof of task 3 submission : URL of facebook post
 class Task3Text(models.Model):
-    player=models.ForeignKey(Players,null=False,blank=False,on_delete=models.CASCADE)
+    player=models.ForeignKey(Players,null=False,blank=False,on_delete=models.CASCADE,db_constraint=False)
     text=models.URLField(max_length=200,null=False,blank=False,verbose_name="text")
-    time_added = models.DateTimeField(auto_now_add=True)
+    # time_added = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return f"{self.text[:50]}..."
+
 
 #Points table for leaderboard
 # class Points(models.Model):
