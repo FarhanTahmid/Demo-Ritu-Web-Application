@@ -2,7 +2,7 @@ from xmlrpc.client import DateTime
 from django.contrib.auth.models import User
 from django.shortcuts import render, redirect
 from . import addTextTask
-from .models import Players
+from .models import Marketplace, Players
 from django.core import serializers
 import datetime
 
@@ -19,7 +19,7 @@ def finalMessage(request):
 def leaderboard(request):
     return render(request, 'ritu_web_app/Leaderboard.html')
 def marketplace(request):
-    data = serializers.serialize("python",Players.objects.all())
+    data = serializers.serialize("python",Marketplace.objects.all())
     context = {
         'data':data,
     }

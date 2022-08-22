@@ -6,7 +6,7 @@
     <title>Marketplace</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital@0;1&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-    <link rel="stylesheet" href="{% static 'task1.css' %}">
+    <link rel="stylesheet" href="{% static 'task.css' %}">
     <script src="https://kit.fontawesome.com/2c5d01c5ac.js" crossorigin="anonymous"></script>
   </head>
 
@@ -79,13 +79,13 @@
                       {% for instance in data %}
                       <tr>
                         <td>
-                          {{ request.user.username }}
+                          <a href="https://www.daraz.com.bd/products/xiaomi-smart-led-bulb-essential-white-and-color-i156264985-s1085754052.html?spm=a2a0e.searchlist.list.4.50333f52Uqeeks&search=1"> {{ instance.fields.product_name }} </a>
                         </td>
                         <td>
-                          {{ instance.fields.fullname }}
+                          {{ instance.fields.product_desc }}
                         </td>
                         <td>
-                          {{ instance.fields.mobileNumber }}
+                          {{ instance.fields.product_price }}
                         </td>
                       </tr>
                       {% endfor  %}
