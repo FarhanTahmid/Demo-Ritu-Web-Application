@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 {% load static %}
 <html lang="en" dir="ltr">
@@ -13,8 +12,8 @@
       <div class="left">
 
         <img src="{% static 'logo.png' %}" alt="user" width="100">
-        <h4>Khan Tahmid Chowdhury</h4>
-        <p>Level 100000 </p>
+        <h4>{{ fullname }}</h4>
+        <p>{{ username }}</p>
 
       </div>
 
@@ -26,12 +25,12 @@
 
             <div class="data">
               <h4>Email</h4>
-              <p>zaedkhan2019@gmail.com</p>
+              <p>{{ email }}</p>
             </div>
 
             <div class="data">
               <h4>Phone</h4>
-              <p>01760048899</p>
+              <p>{{ mobileNumber }}</p>
             </div>
 
           </div>
