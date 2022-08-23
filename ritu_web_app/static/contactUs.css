@@ -16,8 +16,7 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background: url(logo.png);
-  background-size: cover;
+  background-color: #009688;
 }
 
 .contact .content
@@ -30,7 +29,7 @@
 {
   font-size: 36px;
   font-weight: 500;
-  color: white;
+  color: #EFD033;
 }
 
 .contact .content p
@@ -87,7 +86,7 @@
 .container .contactInfo .box .text h3
 {
   font-weight: 500;
-  color: #00bcd4
+  color: #EFD033
 }
 
 .contactForm
@@ -95,11 +94,12 @@
   width: 40%;
   padding: 40px;
   background: white;
+  border-radius: 20px;;
 }
 
 .contactForm h2
 {
-  foont-size: 30px;
+  font-size: 30px;
   color: #333;
   font-weight: 500;
 }
@@ -141,7 +141,7 @@
 .contactForm .inputBox textarea:focus ~ span,
 .contactForm .inputBox textarea:valid ~ span
 {
-  color: #e91e63;
+  color: #EFD033;
   font-size: 12px;
   transform: translateY(-20px);
 }
@@ -149,7 +149,7 @@
 .contactForm .inputBox input[type="submit"]
 {
   width: 100px;
-  background: #00bcd4;
+  background: #EFD033;
   color: white;
   border: none;
   cursor: pointer;

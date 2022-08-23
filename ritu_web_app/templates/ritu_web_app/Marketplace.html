@@ -1,25 +1,25 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 {% load static %}
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
     <title>Marketplace</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital@0;1&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-    <link rel="stylesheet" href="{% static 'task.css' %}">
-    <script src="https://kit.fontawesome.com/2c5d01c5ac.js" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'marketplace.css' %}">
+    <script src="https://kit.fontawesome.com/f6a195ab53.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.11/typed.min.js"></script>
   </head>
 
+  </script>
+
   <body>
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
 
-      <a class="navbar-brand" href="#">RITU</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-      <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div  class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav ml-auto">
+    <nav class="navbar">
+      <div class="max-width">
+        <div class="logo"><a href="#"><span>R</span>itu.</a></div>
+        <ul class="menu">
           <li class="nav-item"><a class="nav-link" href="{% url 'users:menu' %}">Home</a></li>
           <li class="nav-item"><a class="nav-link" href="{% url 'ritu_web_app:profileCard' %}">Profile</a></li>
           <li class="nav-item"> <a class="nav-link" href="{% url 'ritu_web_app:leaderboard' %}">Leaderboard</a></li>
@@ -27,56 +27,22 @@
           <li class="nav-item"><a class="nav-link" href="{% url 'ritu_web_app:homepage' %}">Log Out</a></li>
         </ul>
       </div>
+    </nav> 
 
-    </nav>
-
-    <!-- <body>
-      <h1>MARKETPLACE</h1>
-      <section class="container">
-        <div class="offered_courses_table">
-          <table>
-            <thead>
-              <tr>
-                <th>Product Name</th>
-                <th>Product Description</th>
-                <th>Product Price</th>
-              </tr>
-            </thead>
-            {% for instance in data %}
+    <section class="container">
+      <div class="content">
+        <h2>MARKETPLACE</h2>
+      </div>
+      <div class="marketplace_table">
+        <table>
+          <thead>
             <tr>
-              <td>
-                {{ request.user.username }}
-              </td>
-              <td>
-                {{ instance.fields.fullname }}
-              </td>
-              <td>
-                {{ instance.fields.mobileNumber }}
-              </td>
+              <th>Product Name</th>
+              <th>Product Description</th>
+              <th>Product Price</th>
             </tr>
-            {% endfor  %}
-           </table>
-        </div>
-      </section>
-    </body> -->
-
-    <header id="header2">
-      <div class="overlay">
-        <div class="container">
-          <div class="row text-center">
-            <div class="col">
-              <h1 class="display-4">MARKETPLACE</h1>
-
-                <div class="leaderboard_table">
-                  <table style="width:100%">
-                      <thead>
-                        <tr>
-                          <th>Product Name</th>
-                          <th>Product Description</th>
-                          <th>Product Price</th>
-                        </tr>
-                      </thead>
-                      {% for instance in data %}
+          </thead>
+          {% for instance in data %}
                       <tr>
                         <td>
                           <a href="https://www.daraz.com.bd/products/xiaomi-smart-led-bulb-essential-white-and-color-i156264985-s1085754052.html?spm=a2a0e.searchlist.list.4.50333f52Uqeeks&search=1"> {{ instance.fields.product_name }} </a>
@@ -89,15 +55,104 @@
                         </td>
                       </tr>
                       {% endfor  %}
-                      <tbody id="tableData"></tbody>
-                  </table>
-                </div>
+         </table>
+      </div>
+    </section>
+  </body>
+</html> -->
 
-            </div>
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>RITU</title>
+
+    <link rel="stylesheet" href="{% static 'leaderboard.css' %}">
+    <script src="https://kit.fontawesome.com/f6a195ab53.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.11/typed.min.js"></script>
+
+  </head>
+  <body>
+
+    <nav class="navbar">
+      <div class="max-width">
+        <div class="logo"><a href="#"><span>R</span>itu.</span></a></div>
+        <ul class="menu">
+          <li class="nav-item"><a class="nav-link" href="{% url 'users:menu' %}">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="{% url 'ritu_web_app:profileCard' %}">Profile</a></li>
+          <li class="nav-item"> <a class="nav-link" href="{% url 'ritu_web_app:leaderboard' %}">Leaderboard</a></li>
+          <li class="nav-item"><a class="nav-link" href="{% url 'ritu_web_app:marketplace' %}">Marketplace</a></li>
+          <li class="nav-item"><a class="nav-link" href="{% url 'ritu_web_app:homepage' %}">Log Out</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <script>
+      let scoreData = [
+        { id: 123, name: "abs", points: 200000 },
+        { id: 233, name: "zaed", points: 90000000 },
+        { id: 256, name: "snow", points: 100000 },
+      ];
+  
+      window.onload = () => {
+        loadTableData(scoreData);
+      };
+  
+      function loadTableData(scoreData){
+        const tableBody = document.getElementById("tableData");
+        let dataHtml = '';
+  
+        for(let score of scoreData){
+          dataHtml += `<tr><td>${score.id}</td><td>${score.name}</td><td>${score.points}</td></tr>`;
+        }
+        console.log(dataHtml)
+  
+        tableBody.innerHTML = dataHtml;
+      }
+      </script>
+
+    <section class = "home" id= "home">
+      <div class="max-width">
+        <div class="home-content">
+          <div class="text-2"><span>MARKET</span>PLACE</div>
+          <div class="marketplace_table">
+            <table>
+              <thead>
+                <tr>
+                  <th>Product Name</th>
+                  <th>Product Description</th>
+                  <th>Product Price</th>
+                </tr>
+              </thead>
+              {% for instance in data %}
+                          <tr>
+                            <td>
+                              <a href="https://www.daraz.com.bd/products/xiaomi-smart-led-bulb-essential-white-and-color-i156264985-s1085754052.html?spm=a2a0e.searchlist.list.4.50333f52Uqeeks&search=1"> {{ instance.fields.product_name }} </a>
+                            </td>
+                            <td>
+                              {{ instance.fields.product_desc }}
+                            </td>
+                            <td>
+                              {{ instance.fields.product_price }}
+                            </td>
+                          </tr>
+                          {% endfor  %}
+             </table>
           </div>
         </div>
       </div>
-    </header>
-
-
+    </section>
+  </body>
 </html>
+
+
+
+
+
+
+
