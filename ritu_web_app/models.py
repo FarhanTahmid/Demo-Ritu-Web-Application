@@ -48,7 +48,7 @@ class Task3Proof(models.Model):
 class Task1Text(models.Model):
     player=models.ForeignKey(Players,null=False,blank=False,on_delete=models.CASCADE,db_constraint=False)
     text=models.URLField(max_length=200,null=False,blank=False,verbose_name="text")
-    # time_added = models.DateTimeField(auto_now_add=True)
+    #time_added = models.DateTimeField(auto_now_add=True,null=True,blank=True)
     earnedPoints=models.CharField(null=True,blank=True,max_length=30,verbose_name='Points')
     def __str__(self):
         return f"{self.text[:50]}..."
