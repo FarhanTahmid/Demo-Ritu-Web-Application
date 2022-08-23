@@ -28,7 +28,8 @@ def task1(request):
     if request.method=="POST":
         text=request.POST['task_1_url']
         player = request.user.username
-        addingUrl=addTextTask.TextUrl(text,player)
+        points='25.5'
+        addingUrl=addTextTask.TextUrl(points,text,player)
         addingUrl.addTextUrl_1()
         return redirect('ritu_web_app:task2')
 
@@ -37,7 +38,8 @@ def task2(request):
     if request.method=="POST":
         text=request.POST['task_2_url']
         player = request.user.username
-        addingUrl=addTextTask.TextUrl(text,player)
+        points='20.323434'
+        addingUrl=addTextTask.TextUrl(points,text,player)
         addingUrl.addTextUrl_2()
         return redirect('ritu_web_app:task3')
     return render(request, 'ritu_web_app/task2.html')
@@ -45,7 +47,8 @@ def task3(request):
     if request.method=="POST":
         text=request.POST['task_3_url']
         player = request.user.username
-        addingUrl=addTextTask.TextUrl(text,player)
+        points='20.323'
+        addingUrl=addTextTask.TextUrl(points,text,player)
         addingUrl.addTextUrl_3()
         return redirect('ritu_web_app:finalMessage')
     return render(request, 'ritu_web_app/task3.html')

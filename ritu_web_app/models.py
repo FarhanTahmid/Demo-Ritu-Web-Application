@@ -1,7 +1,9 @@
 from distutils.archive_util import make_zipfile
 import email
+from ftplib import MAXLINE
 from hashlib import blake2b
 from shutil import _ntuple_diskusage
+from types import TracebackType
 from django.db import models
 
 # Players table
@@ -42,32 +44,46 @@ class Task3Proof(models.Model):
     def __str(self):
         return self.player
 
-#Proof of task 1 submission : URL of facebook post
+#Proof of task 1 submission : URL of facebook post/drive link
 class Task1Text(models.Model):
     player=models.ForeignKey(Players,null=False,blank=False,on_delete=models.CASCADE,db_constraint=False)
     text=models.URLField(max_length=200,null=False,blank=False,verbose_name="text")
     # time_added = models.DateTimeField(auto_now_add=True)
-
+    earnedPoints=models.CharField(null=True,blank=True,max_length=30,verbose_name='Points')
     def __str__(self):
         return f"{self.text[:50]}..."
 
-#Proof of task 2 submission : URL of facebook post
+#Proof of task 2 submission : URL of facebook post/drive link
 class Task2Text(models.Model):
     player=models.ForeignKey(Players,null=False,blank=False,on_delete=models.CASCADE,db_constraint=False)
     text=models.URLField(max_length=200,null=False,blank=False,verbose_name="text")
     # time_added = models.DateTimeField(auto_now_add=True)
+    earnedPoints=models.CharField(null=True,blank=True,max_length=30,verbose_name='Points')
 
     def __str__(self):
         return f"{self.text[:50]}..."
 
-#Proof of task 3 submission : URL of facebook post
+#Proof of task 3 submission : URL of facebook post/drive link
 class Task3Text(models.Model):
     player=models.ForeignKey(Players,null=False,blank=False,on_delete=models.CASCADE,db_constraint=False)
     text=models.URLField(max_length=200,null=False,blank=False,verbose_name="text")
     # time_added = models.DateTimeField(auto_now_add=True)
+    earnedPoints=models.CharField(null=True,blank=True,max_length=30,verbose_name='Points')
 
     def __str__(self):
         return f"{self.text[:50]}..."
+
+
+
+#Points table for leaderboard
+class Points(models.Model):
+    player=models.ForeignKey(Players,null=False,blank=False,on_delete=models.CASCADE)
+    earnedPoints=models.CharField(null=True,blank=True,max_length=30,verbose_name='Points')
+
+    def __str__(self):
+        return self.player
+
+
 
 #The items to be sold in marketplace for various tasks
 class Marketplace(models.Model):
@@ -81,11 +97,3 @@ class Marketplace(models.Model):
     def __str__(self):
         return self.product_name
 
-
-#Points table for leaderboard
-# class Points(models.Model):
-#     player=models.ForeignKey(Players,null=False,blank=False,on_delete=models.CASCADE)
-#     points =models.URLField(max_length=200,null=False,blank=False,verbose_name="text")
-
-#     def __str__(self):
-#         return f"{self.text[:50]}..."
