@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 {% load static %}
 <html lang="en" dir="ltr">
   <head>
@@ -14,6 +14,38 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.11/typed.min.js"></script>
 
   </head>
+  <body> -->
+
+    <!-- <nav class="navbar">
+      <div class="max-width">
+        <div class="logo"><a href="#"><span>R</span>itu.</a></div>
+        <ul class="menu">
+          <li class="nav-item"><a class="nav-link" href="{% url 'users:menu' %}">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="{% url 'ritu_web_app:profileCard' %}">Profile</a></li>
+          <li class="nav-item"> <a class="nav-link" href="{% url 'ritu_web_app:leaderboard' %}">Leaderboard</a></li>
+          <li class="nav-item"><a class="nav-link" href="{% url 'ritu_web_app:marketplace' %}">Marketplace</a></li>
+          <li class="nav-item"><a class="nav-link" href="{% url 'ritu_web_app:homepage' %}">Log Out</a></li>
+        </ul>
+      </div>
+    </nav> -->
+
+
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Leaderboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'leaderboard.css' %}">
+    <script src="https://kit.fontawesome.com/f6a195ab53.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.11/typed.min.js"></script>
+  </head>
+
+  </script>
+
   <body>
 
     <nav class="navbar">
@@ -27,65 +59,34 @@
           <li class="nav-item"><a class="nav-link" href="{% url 'ritu_web_app:homepage' %}">Log Out</a></li>
         </ul>
       </div>
-    </nav>
+    </nav> 
 
-    
-  <script>
-    let scoreData = [
-      { id: 123, name: "abs", points: 200000 },
-      { id: 233, name: "zaed", points: 90000000 },
-      { id: 256, name: "snow", points: 100000 },
-    ];
-
-    window.onload = () => {
-      loadTableData(scoreData);
-    };
-
-    function loadTableData(scoreData){
-      const tableBody = document.getElementById("tableData");
-      let dataHtml = '';
-
-      for(let score of scoreData){
-        dataHtml += `<tr><td>${score.id}</td><td>${score.name}</td><td>${score.points}</td></tr>`;
+    <script>
+      let scoreData = [
+        { id: 123, name: "abs", points: 200000 },
+        { id: 233, name: "zaed", points: 90000000 },
+        { id: 256, name: "snow", points: 100000 },
+      ];
+  
+      window.onload = () => {
+        loadTableData(scoreData);
+      };
+  
+      function loadTableData(scoreData){
+        const tableBody = document.getElementById("tableData");
+        let dataHtml = '';
+  
+        for(let score of scoreData){
+          dataHtml += `<tr><td>${score.id}</td><td>${score.name}</td><td>${score.points}</td></tr>`;
+        }
+        console.log(dataHtml)
+  
+        tableBody.innerHTML = dataHtml;
       }
-      console.log(dataHtml)
-
-      tableBody.innerHTML = dataHtml;
-    }
-
-  </script>
-  <!-- // <header id="header2">
-  //   <div class="overlay">
-  //     <div class="container">
-  //       <div class="row text-center">
-  //         <div class="col">
-  //           <h1 class="display-4">LEADERBOARD</h1>
-
-  //             <div class="leaderboard_table">
-  //               <table style="width:100%">
-  //                   <thead>
-  //                     <tr>
-  //                       <th>Player ID</th>
-  //                       <th>Name</th>
-  //                       <th>Points</th>
-  //                     </tr>
-  //                   </thead>
-  //                   <tbody id="tableData"></tbody>
-  //               </table>
-  //             </div>
-
-  //         </div>
-  //       </div>
-  //     </div>
-  //   </div>
-  // </header> -->
+      </script>
 
     <section class = "home" id= "home">
-      <div class="overlay">
-       <div class="container">
-         <div class="row text-center">
-           <div class="col">
-             <h1 class="display-4">LEADERBOARD</h1>
+             <h1>LEADERBOARD</h1>
 
                <div class="leaderboard_table">
                  <table style="width:100%">
@@ -99,21 +100,10 @@
                      <tbody id="tableData"></tbody>
                  </table>
                </div>
-
-           </div>
-         </div>
-       </div>
-     </div>
     </section>
-
-            <!-- footer section start -->
-            <!-- <footer>
-              <div>
-              <span>Created By <a href="#">Zaed Absara Farhan</a>    |  <span  class="far fa-copyright"></span>  2022 All rights reserved.</span>
-              </div>
-            </footer> -->
-
-  <script src="{% static 'task.js' %}"></script>
   </body>
-
 </html>
+
+
+
+

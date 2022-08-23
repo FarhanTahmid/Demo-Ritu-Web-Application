@@ -1,5 +1,5 @@
 body{
-  background-color: #00bcd4;
+  background-color: #009688;
 }
 .container .content
 {
@@ -38,4 +38,48 @@ tr:nth-child(even){
 tr:hover {
   background-color: black;
   color: white;
+}
+
+.navbar{
+  position: fixed;
+  width: 100%;
+  z-index: 999;
+  padding: 30px 0;
+  font-family: 'Ubuntu', sans-serif;
+  transition: all 0.3s ease;
+  padding: 15px 0;
+  background-color: none;
+}
+
+.navbar .max-width{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.navbar .logo a{
+  color: #fff;
+  font-size: 30px;
+  font-weight: 400;
+}
+
+.navbar .logo a span{
+  color: #EFD033;
+  font-size: 30px;
+  transition: all 0.3s ease;
+}
+
+.navbar .menu li{
+  list-style: none;
+  display: inline-block;
+}
+.navbar .menu li a{
+  color: #fff;
+  font-size: 20px;
+  font-weight: 500;
+  margin-left: 25px;
+  transition: color 0.3s ease;
+}
+
+.navbar .menu li a:hover{
+  color: #EFD033;
 }
