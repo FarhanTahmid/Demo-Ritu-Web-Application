@@ -34,7 +34,32 @@
         <div class="home-content">
           <div class="text-2">Task<span> 2</span></div>
           <div class="text-3">Roads are the homes of many living creatrues!<br> Clean the road and
-            upload video! <br><span class="typing"></span></div>
+            upload video! <br><span class="typing"></span>
+          </div>
+
+          <div class="countDownTimer">
+            <span><p class="timeRemaining">Time Remaining:</p></span>
+            <span>
+              <div class="timer">
+                <div class="dayTime">
+                  <h4 class="day">Time</h4>
+                  <h5 class="tt">Day</h5>
+                </div>
+                <div class="dayTime">
+                  <h4 class="hour">Time</h4>
+                  <h5 class="tt">Hour</h5>
+                </div>
+                <div class="dayTime">
+                  <h4 class="minute">Time</h4>
+                  <h5 class="tt">Minute</h5>
+                </div>
+                <div class="dayTime">
+                  <h4 class="second">Time</h4>
+                  <h5 class="tt">Second</h5>
+                </div>
+              </div>
+            </span>
+          </div>
 
             <form method="POST" action="task2">
               {% csrf_token %}
@@ -65,6 +90,7 @@
             </footer> -->
 
   <script src="{% static 'task.js' %}"></script>
+  <script src="{% static 'tasktime.js' %}"></script>
   </body>
 
 </html>
