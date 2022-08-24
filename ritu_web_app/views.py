@@ -3,6 +3,7 @@ from xmlrpc.client import DateTime
 from django.contrib.auth.models import User
 from django.shortcuts import render, redirect
 from . import addTextTask
+from . import leaderboard
 from .models import Marketplace, Players
 from django.core import serializers
 from datetime import datetime
@@ -45,6 +46,11 @@ def task1(request):
         #populating table with datas
         addingUrl=addTextTask.TextUrl(points,text,player)
         addingUrl.addTextUrl_1()
+        
+        #inserting data in leaderboard
+        
+        addingInLeaderboard=leaderboard.L##showing error here
+        addingInLeaderboard.insertDataInLeaderboard()
         return redirect('ritu_web_app:task2')
 
     return render(request, 'ritu_web_app/task1.html')
