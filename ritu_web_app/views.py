@@ -47,11 +47,13 @@ def task1(request):
         addingUrl=addTextTask.TextUrl(points,text,player)
         addingUrl.addTextUrl_1()
         
-        #inserting data in leaderboard
+        # #inserting data in leaderboard
         
         addingInLeaderboard=updatedLeaderboard.Leaderboards(player)
         print("Data passed")
         addingInLeaderboard.insertDataInLeaderboard()
+        
+        
         return redirect('ritu_web_app:task2')
 
     return render(request, 'ritu_web_app/task1.html')
@@ -59,18 +61,50 @@ def task2(request):
     if request.method=="POST":
         text=request.POST['task_2_url']
         player = request.user.username
-        points='20.323434'
+        
+        #Calculating score
+        timeInMilli = int(round(time.time() * 1000)) #getting current time
+        
+        date_obj = datetime.strptime('01.09.2022 00:00:00,00','%d.%m.%Y %H:%M:%S,%f') #getting the time of when the task was launched 
+        endTimeinMilli =int(date_obj.timestamp() * 1000)
+        
+        gapOfTimeInMilli=endTimeinMilli-timeInMilli #findin the time gap 
+        
+        point=round(0.00000014452*float(gapOfTimeInMilli),5) #rounding off points to 5 decimal digits
+        points=str(point)
+        
+        #populating table with datas
         addingUrl=addTextTask.TextUrl(points,text,player)
         addingUrl.addTextUrl_2()
+        
+        addingInLeaderboard=updatedLeaderboard.Leaderboards(player)
+        addingInLeaderboard.insertDataInLeaderboard()
+        
         return redirect('ritu_web_app:task3')
     return render(request, 'ritu_web_app/task2.html')
 def task3(request):
     if request.method=="POST":
         text=request.POST['task_3_url']
         player = request.user.username
-        points='20.323'
+        
+        #Calculating score
+        timeInMilli = int(round(time.time() * 1000)) #getting current time
+        
+        date_obj = datetime.strptime('01.09.2022 00:00:00,00','%d.%m.%Y %H:%M:%S,%f') #getting the time of when the task was launched 
+        endTimeinMilli =int(date_obj.timestamp() * 1000)
+        
+        gapOfTimeInMilli=endTimeinMilli-timeInMilli #findin the time gap 
+        
+        point=round(0.00000014452*float(gapOfTimeInMilli),5) #rounding off points to 5 decimal digits
+        points=str(point)
+        
+        #populating table with datas
         addingUrl=addTextTask.TextUrl(points,text,player)
         addingUrl.addTextUrl_3()
+        
+        addingInLeaderboard=updatedLeaderboard.Leaderboards(player)
+        addingInLeaderboard.insertDataInLeaderboard()
+        
         return redirect('ritu_web_app:finalMessage')
     return render(request, 'ritu_web_app/task3.html')
 def verification(request):

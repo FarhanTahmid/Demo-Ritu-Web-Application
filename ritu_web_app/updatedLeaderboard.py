@@ -19,12 +19,38 @@ class Leaderboards:
                 print("Player didnt exist in leaderboard, creating one")
                 #db_cursor=connections['default'].cursor()
                 
+                #getting points for particular user from task1 table
                 task1=Task1Text.objects.raw("SELECT id,player_id, earnedPoints FROM ritu_web_app_task1text WHERE player_id='"+self.username+"'")
-                task1points=0.0
+                getTask1Points=[]
                 for task in task1:
-                    if(task1points>task.earnedPoints):
-                        task1points=float(task.earnedPoints)
-                print(f"task point: {task1points}")
+                    getTask1Points.append(str(task.earnedPoints))
+                
+                task1points=float(max(getTask1Points))
+                
+                print(task1points)
+                
+                #getting points for particular user from task2 table
+                task2=Task2Text.objects.raw("SELECT id,player_id, earnedPoints FROM ritu_web_app_task2text WHERE player_id='"+self.username+"'")
+                getTask2Points=[]
+                for task in task2:
+                    getTask2Points.append(str(task.earnedPoints))
+                
+                task2points=float(max(getTask2Points))
+                
+                print(task2points)
+                
+                #getting points for particular user from task3 table
+                task3=Task3Text.objects.raw("SELECT id,player_id, earnedPoints FROM ritu_web_app_task3text WHERE player_id='"+self.username+"'")
+                getTask3Points=[]
+                for task in task3:
+                    getTask3Points.append(str(task.earnedPoints))
+                
+                task3points=float(max(getTask3Points))
+                
+                print(task3points)
+                
+                leaderboardPoint=(task1points+task2points+task3points)
+                print(f"Leaderboard Point: {leaderboardPoint}")
                 #db_cursor.execute("INSERT INTO ritu_web_app_leaderboard(player_id,points)VALUES('"+self.username+"','"++"')")
         else:
             print("player exists")           
