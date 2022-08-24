@@ -76,7 +76,7 @@ class Task3Text(models.Model):
 
 
 #Points table for leaderboard
-class Points(models.Model):
+class Leaderboard(models.Model):
     player=models.ForeignKey(Players,null=False,blank=False,on_delete=models.CASCADE)
     earnedPoints=models.CharField(null=True,blank=True,max_length=30,verbose_name='Points')
 
