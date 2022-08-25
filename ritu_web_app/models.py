@@ -89,9 +89,9 @@ class Leaderboard(models.Model):
 #The items to be sold in marketplace for various tasks
 class Marketplace(models.Model):
     product_name=models.CharField(null=False,blank=False,max_length=100,verbose_name="Name")
-    # product_img=models.CharField(null=False,blank=False,max_length=20)
     product_desc=models.CharField(null=False,blank=False,max_length=150,verbose_name="Description")
-    product_price=models.PositiveIntegerField(null=False,blank=False,verbose_name="Price")
+    product_price=models.CharField(max_length=20,null=False,blank=False,verbose_name="Price")
+    product_img=models.ImageField(null=True,blank=True,verbose_name="Image")
 
     def __str__(self):
         return self.product_name

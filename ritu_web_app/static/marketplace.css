@@ -6,6 +6,8 @@
    padding: 0;
    box-sizing: border-box;
    text-decoration: none;
+   transition: .2s linear;
+   
  }
  
  .max-width{
@@ -100,18 +102,24 @@
    font-weight: 500;
  }
  
- /* .home .home-content a{
+ .home .home-content a{
    display: inline-block;
+   background: #EFD033;
+   color: rgba(255, 255, 255, 0.822);
    font-size: 25px;
+   padding: 12px 36px;
    margin-top: 20px;
-   margin-right: 20px;
+   margin-right: 20px;;
+   border-radius: 30px;
+   border: 2px solid #EFD033;
    transition: all 0.3s ease;
    justify-content: space-between;
  }
  
  .home .home-content a:hover{
-   color: #EFD033
- } */
+   color: #EFD033;
+   background: none;
+ }
  
  
  /* responsive media query start */
@@ -133,8 +141,7 @@
    }
  
    .menu-btn{
-     display: block;
-     z-index: 999;
+
    }
  
    .menu-btn i.active:before{
@@ -184,6 +191,13 @@
    }
  
  }
+
+ @media (max-width:770px){
+  .marketplace-wrapper{
+    padding: 20px;
+
+  }
+ }
  
  @media (max-width: 690px){
    .max-width{
@@ -224,7 +238,7 @@
    color: black;
  }
  
- thead{
+ /* thead{
    background-color: white;
  
  }
@@ -247,4 +261,46 @@
    background-color: black;
    color: white;
  }
- 
+  */
+.marketplace-wrapper{
+  margin: 10px auto;
+  padding: 0 10%;
+  padding-bottom: 10px;
+  text-transform: capitalize; 
+}
+.container{
+  display: flex;  
+}
+.box{
+  height: 300px;
+  width: 350px;
+  text-align: center;
+  border-radius: 5px;
+  background: #fff;
+  box-shadow: 0px 5px 10px rgba(0,0,0,0.2);
+  margin-left: 15px;
+  
+}
+.box img{
+  height: 200px;
+  width: 350px;
+}
+.box h3{
+  color: #EFD033;
+  padding: 10 px 0;
+  font-size: 40px;
+}
+.box p{
+  color: #111;
+  font-size: 18px;
+  line-height: 1.6  ;
+}
+.home .price{
+  margin-top: -5px;
+  color: #ff6666;
+  font-size: 20px;
+}
+.box:hover{
+  transform: scale(1.03);
+  box-shadow: 0 10px 15px rgba(0,0,0,0.3);
+}

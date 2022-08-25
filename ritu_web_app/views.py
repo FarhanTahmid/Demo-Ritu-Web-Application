@@ -5,6 +5,7 @@ from django.contrib.auth.models import User
 from django.shortcuts import render, redirect
 from . import addTextTask
 from . import updatedLeaderboard
+from . import marketPlace
 from .models import Leaderboard, Marketplace, Players
 from django.core import serializers
 from datetime import datetime
@@ -41,11 +42,12 @@ def showLeaderboard(request):
     return render(request, 'ritu_web_app/Leaderboard.html',context)
 
 def marketplace(request):
-    data = serializers.serialize("python",Marketplace.objects.all())
-    context = {
-        'data':data,
-    }
+    
+    product=marketPlace.Market()
+    context=product.showProducts()
+    
     return render(request, 'ritu_web_app/Marketplace.html',context)
+
 def task1(request):
     if request.method=="POST":
         text=request.POST['task_1_url']
@@ -147,3 +149,5 @@ def profileCard(request):
     return render(request,'ritu_web_app/profileCard.html', context)
 def FinalMessege(request):
     return render(request,'ritu_web_app/FinalMessege.html')
+def order(request):
+    return render(request,'order.html')
