@@ -134,11 +134,12 @@ def verification(request):
 def profileCard(request):
     username = request.user.username
     
-    playerdata=player.Player
+    playerdata=player.Player(username)
+    context=playerdata.getInfo()
      
-    context={'username':username,'fullname':fullname,'email':email,'mobileNumber':mobileNumber}
-    # print(context) 
-    return render(request,'ritu_web_app/profileCard.html', context)
+    
+    print(context) 
+    return render(request,'ritu_web_app/profileCard.html',context)
 def FinalMessege(request):
     return render(request,'ritu_web_app/FinalMessege.html')
 def order(request):

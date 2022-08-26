@@ -8,10 +8,10 @@ from django.db import models
 
 # Players table
 class Players(models.Model):
-    username=models.CharField(primary_key=True,null=False,blank=False,max_length=20)
+    username=models.CharField(primary_key=True,null=False,blank=False,max_length=40)
     fullname=models.CharField(null=False,blank=False,max_length=50)
     mobileNumber=models.CharField(null=False,blank=False,max_length=15)
-    email=models.EmailField(null=False,blank=False,max_length=30)
+    email=models.EmailField(null=False,blank=False,max_length=100)
     address=models.CharField(null=False,blank=False,max_length=100)
     picture=models.ImageField(null=True,blank=True)
 
