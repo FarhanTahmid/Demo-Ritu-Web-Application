@@ -1,7 +1,9 @@
 from configparser import MAX_INTERPOLATION_DEPTH
 from distutils.archive_util import make_zipfile
+from distutils.command.upload import upload
 import email
 from email import message
+from email.policy import default
 from ftplib import MAXLINE
 from hashlib import blake2b
 from shutil import _ntuple_diskusage
@@ -15,7 +17,7 @@ class Players(models.Model):
     mobileNumber=models.CharField(null=False,blank=False,max_length=15)
     email=models.EmailField(null=False,blank=False,max_length=100)
     address=models.CharField(null=False,blank=False,max_length=100)
-    picture=models.ImageField(null=True,blank=True,upload_to='images/')
+    picture=models.ImageField(default='images/default.png',null=True,blank=True,upload_to='images/')
 
     def __str__(self) :
         return self.username
@@ -24,7 +26,7 @@ class Players(models.Model):
 class Task1Proof(models.Model):
     player=models.ForeignKey(Players,null=False,blank=False,on_delete=models.CASCADE)
     #taskid= here comes the taskid field which will be generated from the tasktable
-    proof=models.ImageField(null=True,blank=True,upload_to='images/')
+    proof=models.FileField(null=True,blank=True,upload_to='task1/')
     
     def __str(self):
         return self.player
@@ -33,7 +35,7 @@ class Task1Proof(models.Model):
 class Task2Proof(models.Model):
     player=models.ForeignKey(Players,null=False,blank=False,on_delete=models.CASCADE)
     #taskid= here comes the taskid field which will be generated from the tasktable
-    proof=models.ImageField(null=True,blank=True)
+    proof=models.FileField(null=True,blank=True,upload_to='task2/')
     
     def __str(self):
         return self.player
@@ -42,10 +44,10 @@ class Task2Proof(models.Model):
 class Task3Proof(models.Model):
     player=models.ForeignKey(Players,null=False,blank=False,on_delete=models.CASCADE)
     #taskid= here comes the taskid field which will be generated from the tasktable
-    proof=models.ImageField(null=True,blank=True)
+    proof=models.FileField(null=True,blank=True,upload_to='task3/')
     
     def __str(self):
-        return self.player
+        return self.player  
 
 #Proof of task 1 submission : URL of facebook post/drive link
 class Task1Text(models.Model):
@@ -94,7 +96,7 @@ class Marketplace(models.Model):
     product_name=models.CharField(null=False,blank=False,max_length=100,verbose_name="Name")
     product_desc=models.CharField(null=False,blank=False,max_length=150,verbose_name="Description")
     product_price=models.CharField(max_length=20,null=False,blank=False,verbose_name="Price")
-    product_img=models.ImageField(null=True,blank=True,verbose_name="Image")
+    product_img=models.ImageField(null=True,blank=True,verbose_name="Image",upload_to='marketplace/')
 
     def __str__(self):
         return self.product_name
