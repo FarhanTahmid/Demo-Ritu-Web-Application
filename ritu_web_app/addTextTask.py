@@ -16,16 +16,15 @@ class TextUrl:
         
     def addTextProof_1(self,mediaFile):
         self.proof=mediaFile
-        db_cursor=connections['default'].cursor()
-        db_cursor.execute("INSERT INTO ritu_web_app_task1proof (proof,player_id) VALUES ('"+self.proof+"','"+self.player+"')")
-        
+        Task1Proof.objects.create(player_id=self.player,proof=mediaFile)
+    
     def addTextUrl_2(self):
         db_cursor=connections['default'].cursor()
         db_cursor.execute("INSERT INTO ritu_web_app_task2text(text,player_id,earnedPoints) VALUES('"+self.text+"','"+self.player+"','"+self.points+"')")
         
     def addTextProof_2(self,mediaFile):
         self.proof=mediaFile
-        Task2Proof.objects.raw("INSERT INTO ritu_web_app_task2proof (id,proof,player_id) VALUES ('"+self.proof+"','"+self.player+"')")
+        Task2Proof.objects.create(player_id=self.player,proof=mediaFile)
     
     def addTextUrl_3(self):
         db_cursor=connections['default'].cursor()
@@ -33,5 +32,5 @@ class TextUrl:
     
     def addTextProof_3(self,mediaFile):
         self.proof=mediaFile
-        Task3Proof.objects.raw("INSERT INTO ritu_web_app_task3proof (id,proof,player_id) VALUES ('"+self.proof+"','"+self.player+"')")
+        Task3Proof.objects.create(player_id=self.player,proof=mediaFile)
     

@@ -9,9 +9,10 @@ from . import updatedLeaderboard
 from . import marketPlace
 from . import player
 from . import orders
-from .models import Leaderboard, Marketplace, Players
+from .models import Leaderboard, Marketplace, Players,Messages
 from django.core import serializers
 from datetime import datetime
+from django.contrib import messages
 import time
 
 def homepage(request):
@@ -21,6 +22,15 @@ def homepage(request):
 def aboutUs(request):
     return render(request,'ritu_web_app/aboutUs.html')
 def contactUs(request):
+    if(request.method=="POST"):
+        name=request.POST['name']
+        email=request.POST['email']
+        message=request.POST['message']
+        if(Messages.objects.create(name=name,email=email,message=message)):
+            messages.info(request,'Your message is stored successfully')
+        else:
+            messages.info(request,"An unexpected error occured")
+            
     return render(request,'ritu_web_app/contactUs.html')
 def finalMessage(request):
     return render(request, 'ritu_web_app/FinalMessege.html')
@@ -56,7 +66,10 @@ def marketplace(request):
         playerID = request.user.username
         
         order=orders.TrackOrder(playerID,productID,name,address,contact)
-        order.addOrder()
+        if(order.addOrder()):
+            messages.info(request,'Purchase Confirmed!')
+        else:
+            messages.info(request,'Unexpected Error Occured! Enter correct Product ID')
         
     return render(request, 'ritu_web_app/Marketplace.html',context)
 
@@ -115,7 +128,7 @@ def task2(request):
         addingUrl=addTextTask.TextUrl(points,text,player)
         addingUrl.addTextUrl_2()
         print(file)
-        #addingUrl.addTextProof_2(file)
+        addingUrl.addTextProof_2(file)
         
         addingInLeaderboard=updatedLeaderboard.Leaderboards(player)
         addingInLeaderboard.insertDataInLeaderboard()
@@ -153,11 +166,21 @@ def verification(request):
     return render(request,'ritu_web_app/verificationPage.html')
 def profileCard(request):
     username = request.user.username
-    
     playerdata=player.Player(username)
     context=playerdata.getInfo()
-     
+    
+    if request.method=="POST" and request.FILES['picture']:
+        file=request.FILES['picture']
+        forimage=Players.objects.get(username=username)
+        forimage.picture=file
+        forimage.save()
+        playerdata2=player.Player(username)
+        context2=playerdata2.getInfo()
+        
+        return render(request,'ritu_web_app/profileCard.html',context2)
+    
     return render(request,'ritu_web_app/profileCard.html',context)
+
 def FinalMessege(request):
     return render(request,'ritu_web_app/FinalMessege.html')
 def order(request):

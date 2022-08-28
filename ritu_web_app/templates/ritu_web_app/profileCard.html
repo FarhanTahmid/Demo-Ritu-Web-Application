@@ -33,16 +33,20 @@
     <div class="profile-card">
       <div class="card-header">
         <div class="picture">
-          <img src='images/{{picture}}'>
+          <img src='{{MEDIA_URL}}{{picture}}'>
         </div>
         <div class="name">{{name}}</div>
         <div class="username">Username: {{username}}</div>
         <div class="mon">Contact No: {{mobileNum}}</div>
         <div class="address">Address: {{address}}</div>
-        <div class="picture-upload">
-          <span class="details">Change Profile Picture:</span>
-          <span><input type="file" name="Change Photo" class="upload-box" ></span>
-          <a href="#" class="submit-btn">Change</a>
+        
+        <form method="POST" action="profile" enctype="multipart/form-data">
+          {% csrf_token %}
+          <div class="picture-upload">
+          
+          <label class="details">Change Profile Picture:</label>
+          <span><input type="file" name="picture"></span>
+          <input type="submit" class="submit-btn",value="Change">
         </div>
         <div class="gameInfo">
           <div class="numbers">
