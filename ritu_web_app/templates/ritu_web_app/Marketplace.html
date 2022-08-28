@@ -35,13 +35,17 @@
       <div class="max-width">
         <div class="home-content">
           <div class="text-2"><span>MARKET</span>PLACE</div>
-          
+          <div class="raise-error">
+            {% for message in messages %}
+              <p class="message">{{message}}</p>
+            {% endfor %}
+          </div>
             <div class="marketpalce-wrapper">
               <div class="container">
                  
                   {% for product in productData %}
                   <div class="box">
-                    <img src='images/{{ product.product_img }}'>
+                    <img src='{{MEDIA_URL}}{{ product.product_img }}'>
                     <h3>{{ product.product_name }}</h3>
                     <p>{{ product.product_desc }}</p>
                     <p class="price">BDT {{ product.product_price }}</p>

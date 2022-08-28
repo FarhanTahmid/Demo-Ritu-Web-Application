@@ -39,22 +39,28 @@
           </div>
         </div>
         <div class="contactForm">
-          <form>
+          <form method='POST' action='contactUs'>
+            {% csrf_token %}
             <h2>Send Messages</h2>
             <div class="inputBox">
-              <input type="text" name="" required="required">
+              <input type="text" name="name" required="required">
               <span>Full Name</span>
             </div>
             <div class="inputBox">
-              <input type="text" name="" required="required">
+              <input type="email" name="email" required="required">
               <span>Email</span>
             </div>
             <div class="inputBox">
-              <textarea required="required"></textarea>
-              <span>Type your Message...</span>
+              <textarea required="required" name="message"></textarea>
+              <span>Type your Message in 500 words here...</span>
             </div>
             <div class="inputBox">
               <input type="submit" name="" value="Send">
+            </div>
+            <div class="raise-error">
+              {% for message in messages %}
+                <p class="message">{{message}}</p>
+              {% endfor %}
             </div>
           </form>
         </div>

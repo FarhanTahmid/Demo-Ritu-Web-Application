@@ -1,6 +1,7 @@
 from configparser import MAX_INTERPOLATION_DEPTH
 from distutils.archive_util import make_zipfile
 import email
+from email import message
 from ftplib import MAXLINE
 from hashlib import blake2b
 from shutil import _ntuple_diskusage
@@ -14,7 +15,7 @@ class Players(models.Model):
     mobileNumber=models.CharField(null=False,blank=False,max_length=15)
     email=models.EmailField(null=False,blank=False,max_length=100)
     address=models.CharField(null=False,blank=False,max_length=100)
-    picture=models.ImageField(null=True,blank=True)
+    picture=models.ImageField(null=True,blank=True,upload_to='images/')
 
     def __str__(self) :
         return self.username
@@ -109,7 +110,8 @@ class Orders(models.Model):
 
 
 
-#Database for orders for ADMIN purpose
+#Databases for orders for ADMIN purpose
+
 class OrderData(models.Model):
     playerID=models.ForeignKey(Players,null=False,blank=False,on_delete=models.CASCADE)
     playerName=models.CharField(null=True,blank=True,max_length=100)
@@ -120,4 +122,12 @@ class OrderData(models.Model):
     contactNum=models.CharField(null=True,blank=True,max_length=20)
     time=models.DateTimeField(auto_now_add=True,null=True,blank=True)
     def __str__(self):
-        return self.playerID
+        return self.product_name
+
+class Messages(models.Model):
+    name=models.CharField(max_length=50,null=False,blank=False)
+    email=models.EmailField(max_length=50,null=False,blank=False)
+    message=models.CharField(max_length=500,null=True,blank=True)
+    
+    def __str__(self) :
+        return self.email
