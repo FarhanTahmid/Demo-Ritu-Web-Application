@@ -68,7 +68,7 @@ class Player:
             'picture':picture,
             'task1point':task1points,
             'task1time':task1time2,
-            'task2point':task3points,
+            'task2point':task2points,
             'task2time':task2time2,
             'task3point':task3points,
             'task3time':task3time2,
