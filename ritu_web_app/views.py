@@ -153,11 +153,21 @@ def verification(request):
     return render(request,'ritu_web_app/verificationPage.html')
 def profileCard(request):
     username = request.user.username
-    
     playerdata=player.Player(username)
     context=playerdata.getInfo()
-     
+    
+    if request.method=="POST" and request.FILES['picture']:
+        file=request.FILES['picture']
+        forimage=Players.objects.get(username=username)
+        forimage.picture=file
+        forimage.save()
+        playerdata2=player.Player(username)
+        context2=playerdata2.getInfo()
+        
+        return render(request,'ritu_web_app/profileCard.html',context2)
+    
     return render(request,'ritu_web_app/profileCard.html',context)
+
 def FinalMessege(request):
     return render(request,'ritu_web_app/FinalMessege.html')
 def order(request):
