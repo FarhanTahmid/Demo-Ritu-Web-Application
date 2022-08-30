@@ -55,12 +55,10 @@ class Leaderboards:
                 if(len(getTask3Points)!=0):
                     task3points=max(getTask3Points)
                 
-                print(f"Task1 point is {task1points}")
-                print(f"Task2 point is {task2points}")
-                print(f"Task3 point in if is {task3points}")
+                
                 
                 leaderboardPoint=round((task1points+task2points+task3points),5)
-                print(f"Leaderboard Point: {leaderboardPoint}")
+                
                 
                 db_cursor=connections['default'].cursor()
                 db_cursor.execute("INSERT INTO ritu_web_app_leaderboard(earnedPoints,player_id,name)VALUES('"+str(leaderboardPoint)+"','"+self.username+"','"+name+"')")
@@ -102,13 +100,11 @@ class Leaderboards:
                     task3points=max(getTask3Points)
                 
                 
-                print(f"Task1 point is{task1points}")
-                print(f"Task2 point is{task2points}")
-                print(f"Task3 point is in else {task3points}")
+                
                 
                 
                 leaderboardPoint=round((task1points+task2points+task3points),5)
-                print(f"Leaderboard Point: {leaderboardPoint}")
+                
                 
                 db_cursor=connections['default'].cursor()
                 db_cursor.execute("UPDATE ritu_web_app_leaderboard SET earnedPoints='"+str(leaderboardPoint)+"' WHERE player_id='"+self.username+"'")

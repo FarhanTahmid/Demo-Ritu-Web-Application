@@ -17,7 +17,7 @@ class Players(models.Model):
     mobileNumber=models.CharField(null=False,blank=False,max_length=15)
     email=models.EmailField(null=False,blank=False,max_length=100)
     address=models.CharField(null=False,blank=False,max_length=100)
-    picture=models.ImageField(default='images/default.png',null=True,blank=True,upload_to='images/')
+    picture=models.ImageField(default='default.png',null=True,blank=True,upload_to='images/')
 
     def __str__(self) :
         return self.username
