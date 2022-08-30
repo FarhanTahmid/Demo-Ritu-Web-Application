@@ -97,10 +97,10 @@ def task1(request):
         addingUrl.addTextProof_1(file)
         
         
-        # #inserting data in leaderboard
+        #inserting data in leaderboard
         
-        # addingInLeaderboard=updatedLeaderboard.Leaderboards(player)
-        # addingInLeaderboard.insertDataInLeaderboard()
+        addingInLeaderboard=updatedLeaderboard.Leaderboards(player)
+        addingInLeaderboard.insertDataInLeaderboard()
         
         
         
@@ -157,8 +157,8 @@ def task3(request):
         addingUrl.addTextUrl_3()
         addingUrl.addTextProof_3(file)
         
-        # addingInLeaderboard=updatedLeaderboard.Leaderboards(player)
-        # addingInLeaderboard.insertDataInLeaderboard()
+        addingInLeaderboard=updatedLeaderboard.Leaderboards(player)
+        addingInLeaderboard.insertDataInLeaderboard()
         
         return redirect('ritu_web_app:finalMessage')
     return render(request, 'ritu_web_app/task3.html')
