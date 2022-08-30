@@ -103,7 +103,7 @@ class Leaderboards:
                 
                 
                 db_cursor=connections['default'].cursor()
-                db_cursor.execute("UPDATE ritu_web_app_leaderboard SET earnedPoints='"+leaderboardPoint+"' WHERE player_id='"+self.username+"'")
+                db_cursor.execute("UPDATE ritu_web_app_leaderboard SET earnedPoints='"+str(leaderboardPoint)+"' WHERE player_id='"+self.username+"'")
         
     
     def showLeaderboardTable(self):
