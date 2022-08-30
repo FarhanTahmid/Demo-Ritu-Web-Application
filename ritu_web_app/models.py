@@ -84,7 +84,7 @@ class Task3Text(models.Model):
 class Leaderboard(models.Model):
     player=models.ForeignKey(Players,null=False,blank=False,on_delete=models.CASCADE)
     name=models.CharField(max_length=100,null=True,blank=True,verbose_name="Name")
-    earnedPoints=models.CharField(null=True,blank=True,max_length=30,verbose_name='Points')
+    earnedPoints=models.FloatField(null=True,blank=True,verbose_name='Points')
 
     def __str__(self):
         return self.player.username
